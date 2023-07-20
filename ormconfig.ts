@@ -7,9 +7,13 @@ export const dataSourceOptions = {
   username: 'postgres',
   password: 'postgres',
   database: 'nestjs-course',
-  synchronize: true,
+  synchronize: false,
+  autoLoadEntities: false,
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/src/migrations/*.js'],
+  cli: {
+    migrationsDir: 'src/migrations'
+  }
 } as DataSourceOptions;
 
 const AppDataSource = new DataSource(dataSourceOptions);

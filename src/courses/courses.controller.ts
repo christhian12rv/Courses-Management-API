@@ -44,14 +44,14 @@ export class CoursesController {
 
   @Put(':id')
   update(
-    @Param('id') id: number,
+    @Param('id') id: string,
     @Body() updateCourseDto: UpdateCourseDto,
   ): Promise<Course> {
     return this.coursesService.update(id, updateCourseDto);
   }
 
   @Delete(':id')
-  delete(@Param('id') id: number): Promise<Course> {
+  delete(@Param('id') id: string): Promise<Course> {
     return this.coursesService.delete(id);
   }
 }
